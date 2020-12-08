@@ -15,7 +15,7 @@ curl -s $1 | grep path | sed -n "s/.*resource path=\"\(.*\)\".*/\1/p" | tee -a ~
 
 #----- recon -----
 crtndstry(){
-./tools/crtndstry/crtndstry $1
+~/tools/crtndstry/crtndstry $1
 }
 
 am(){ #runs amass passively and saves to json
@@ -49,7 +49,7 @@ curl http://ipinfo.io/$1
 
 
 #------ Tools ------
-dirsearch(){ runs dirsearch and takes host and extension as arguments
+dirsearch(){ #runs dirsearch and takes host and extension as arguments
 python3 ~/tools/dirsearch/dirsearch.py -u $1 -e $2 -t 50 -b 
 }
 
